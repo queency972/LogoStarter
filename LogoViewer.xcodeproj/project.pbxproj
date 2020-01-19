@@ -12,6 +12,7 @@
 		C9C38D8E208F0E4900975B31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9C38D8C208F0E4900975B31 /* Main.storyboard */; };
 		C9C38D90208F0E4B00975B31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9C38D8F208F0E4B00975B31 /* Assets.xcassets */; };
 		C9C38D93208F0E4B00975B31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9C38D91208F0E4B00975B31 /* LaunchScreen.storyboard */; };
+		E96C30ED23D4EE3A000B75B9 /* LogoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C30EC23D4EE3A000B75B9 /* LogoService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		C9C38D8F208F0E4B00975B31 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C9C38D92208F0E4B00975B31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C9C38D94208F0E4B00975B31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E96C30EC23D4EE3A000B75B9 /* LogoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +56,47 @@
 		C9C38D87208F0E4900975B31 /* LogoViewer */ = {
 			isa = PBXGroup;
 			children = (
+				C9C38D9D208F10FF00975B31 /* Model */,
+				C9C38D9B208F10F000975B31 /* Controller */,
+				C9C38D9C208F10F900975B31 /* View */,
+				C9C38D9A208F10CE00975B31 /* Supporting Files */,
+			);
+			path = LogoViewer;
+			sourceTree = "<group>";
+		};
+		C9C38D9A208F10CE00975B31 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
 				C9C38D88208F0E4900975B31 /* AppDelegate.swift */,
-				C9C38D8A208F0E4900975B31 /* ViewController.swift */,
-				C9C38D8C208F0E4900975B31 /* Main.storyboard */,
 				C9C38D8F208F0E4B00975B31 /* Assets.xcassets */,
 				C9C38D91208F0E4B00975B31 /* LaunchScreen.storyboard */,
 				C9C38D94208F0E4B00975B31 /* Info.plist */,
 			);
-			path = LogoViewer;
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C9C38D9B208F10F000975B31 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C9C38D8A208F0E4900975B31 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C9C38D9C208F10F900975B31 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C9C38D8C208F0E4900975B31 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C9C38D9D208F10FF00975B31 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E96C30EC23D4EE3A000B75B9 /* LogoService.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,6 +170,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E96C30ED23D4EE3A000B75B9 /* LogoService.swift in Sources */,
 				C9C38D8B208F0E4900975B31 /* ViewController.swift in Sources */,
 				C9C38D89208F0E4900975B31 /* AppDelegate.swift in Sources */,
 			);
@@ -281,7 +317,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = LogoViewer/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/LogoViewer/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -298,7 +334,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = LogoViewer/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/LogoViewer/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
