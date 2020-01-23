@@ -29,13 +29,13 @@ class LogoService {
         task?.cancel()
         task = session.dataTask(with: url) { (data, response, error) in
             DispatchQueue.main.async {
+                // On verifie qu'il y a des data.
                 guard let data = data, error == nil,
                     // On verifie que nous avons une reponse qui a pour code 200.
                     let response = response as? HTTPURLResponse, response.statusCode == 200 else {
                         callback(false, nil)
                         return
                 }
-
                 callback(true, data)
             }
         }
