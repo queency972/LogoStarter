@@ -9,6 +9,7 @@
 import Foundation
 
 class LogoService {
+
     // Instance unique.
     static let shared = LogoService()
     private init() {}
@@ -17,10 +18,11 @@ class LogoService {
     private let baseUrl = "https://logo.clearbit.com/"
     private var task: URLSessionDataTask?
 
+    // Fonction qui permet de récupérer le logo.
     func getLogo(domain: String, callback: @escaping (Bool, Data?) -> Void) {
         // On crée la tache.
         let session = URLSession(configuration: .default)
-
+        // On crée notre URL qui contient la baseUrl + le domain
         guard let url = URL(string: baseUrl + domain) else {
             callback(false, nil)
             return
@@ -28,6 +30,7 @@ class LogoService {
 
         task?.cancel()
         task = session.dataTask(with: url) { (data, response, error) in
+            // On met ce block dans la Main Queue.
             DispatchQueue.main.async {
                 // On verifie qu'il y a des data.
                 guard let data = data, error == nil,

@@ -19,6 +19,7 @@ class ViewController: UIViewController {
         searchLogo()
     }
 
+    // Fonction recherche de logo et l'affiche.
     func searchLogo() {
         guard let domain = textField.text else { return }
 
@@ -32,16 +33,17 @@ class ViewController: UIViewController {
             }
         }
     }
-
+    // Fonction avec para Bool qui montre ou pas le bouton "activityIndicator" et le bouton "searchButton"
     private func toggleActivityIndicator(shown: Bool) {
         activityIndicator.isHidden = !shown
         searchButton.isHidden = shown
     }
-
+    // Fonction qui met à jour "imageView.image" à chaque nouvelle recherche.
     private func updateImage(with data: Data) {
         self.imageView.image = UIImage(data: data)
     }
 
+    // Fonction "Alert" qui permet d'envoyer un message à l'utilisateur.
     private func presentAlert() {
         let alertVC = UIAlertController(title: "Error", message: "Could not find a logo.", preferredStyle: .alert)
         alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
@@ -49,13 +51,15 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    // Extension qui permet...
+    extension ViewController: UITextFieldDelegate {
+        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         searchLogo()
         return true
     }
 
+    // Fonction qui permet de faire disparaitre le clavier.
     @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
         textField.resignFirstResponder()
     }
